@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'san-serif';
+}
+
+:root {
+    --primary-color: #f6f7fb;
+    --white-color: white;
+    --black-color: black;
+    --red-color: red;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+body.dark{
+    --primary-color: #242526;
+    --white-color: #18191a;
+    --black-color: white;
+    --red-color: red;
+}
+
+
+.container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    background-color: var(--white-color);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.clock label {
+    position: absolute;
+    inset: 20px;
+    transform: rotate(calc(var(--i)*(360deg / 12)));
+    /* background-color: red; */
+    text-align: center;
+}
+
+
+.clock label span {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--black-color);
+    display: inline-block;
+    transform: rotate(calc(var(--i) * (-360deg / 12)));
+}
+
+.container .indicater {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.indicater::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: 100;
+    width: 100%;
+    background-color: var(--black-color);
+    border-radius: 50%;
+    border: 4px solid var(--red-color);
+}
+
+.indicater .hand {
+    position: absolute;
+    height: 130px;
+    width: 4px;
+    background-color: var(--red-color);
+    bottom: 0;
+    border-radius: 25px;
+    transform-origin: bottom;
+}
+
+
+.hand.minute {
+    height: 120px;
+    width: 5px;
+    background-color: var(--black-color);
+
+
+}
+
+.hand.hour {
+    height: 100px;
+    width: 8px;
+    background-color: var(--black-color);
+
+
+}
+
+
+.mode-switch {
+    display: inline-block;
+    color: var(--white-color);
+    background-color: var(--black-color);
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: 400;
+    display: inline-block;
+    color: var(--white-color);
+    background-color: var(--black-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
